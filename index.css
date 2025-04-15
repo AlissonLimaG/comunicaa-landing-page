@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --background-page: #FAFAFA;
+    --background-form: #899BF5;
+    --background-button: #0DBA64;
+    --font-color-dark: #111111;
+    --font-color-light: #F3F3F3;
+    --font-size-text: 16px;
+    --font-size-title: 32px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+    transition: all 0.1s linear;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 8rem;
+    background-color: var(--background-page);
+
+    @media (max-width: 1000px) {
+        padding: 5px 2rem;
+    }
+
+    @media (max-width: 430px) {
+        padding: 5px 0.6rem;
+    }
+
+    .header__social-medias {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a{
+            display: flex;
+        }
+
+        .instagram {
+            cursor: pointer;
+            transform: scale(0.8);
+
+            @media (max-width: 430px) {
+                width: 30px;
+            }
+        }
+
+        .mail {
+            cursor: pointer;
+            transform: scale(0.8);
+            margin-left: 2rem;
+
+            @media (max-width: 430px) {
+                width: 30px;
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .logo {
+
+        @media (max-width:430px) {
+            width: 80px;
+        }
+    }
+
+
+}
+
+
+.section__hero {
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 16px;
+    background-image: url(./assets/background1.png);
+    background-position: center;
+    background-size: cover;
+
+    @media (max-width:900px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr;
+        row-gap: 2rem;
+    }
+
+    @media (max-width:400px) {
+        padding: 2rem 1rem;
+    }
+
+    .section__hero_div-video {
+        margin: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        iframe {
+            width: 450px;
+            height: 250px;
+            border: 3px inset var(--background-page);
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+            @media (max-width:900px) {
+                width: 90%;
+                height: 300px;
+            }
+
+            @media (max-width:500px) {
+                width: 100%;
+                height: 180px;
+            }
+        }
+
+        @media (max-width:900px) {
+            grid-row: 2;
+        }
+    }
+
+    .section__hero_div-app {
+        max-width: 500px;
+        margin: 0 auto auto auto;
+
+        h1 {
+            font-size: var(--font-size-title);
+            color: var(--font-color-light);
+            font-weight: 700;
+
+            @media (max-width:900px) {
+                text-align: center;
+            }
+
+            @media (max-width:500px) {
+                font-size: clamp(24px, 3vw, 32px);
+            }
+        }
+
+        p {
+            font-size: var(--font-size-text);
+            color: var(--font-color-light);
+            font-weight: 600;
+            text-align: justify;
+
+            @media (max-width:500px) {
+                font-size: clamp(12px, 3vw, 16px);
+            }
+
+        }
+    }
+}
+
+
+.section__form{
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color-light);
+    background-color: #eff2ff;
+
+    @media (max-width:500px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr;
+        row-gap: 1rem;
+        background-color: var(--background-form);
+        padding: 1rem 1rem;
+    }
+
+    .section__form_form-container{
+        justify-self: center;
+        background-color: var(--background-form);
+        padding: 1rem 2rem;
+        height: 100%;
+        width: clamp(300px, 40vw, 400px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width:500px) {
+            width: 100%;
+            padding: 1rem 1rem;
+        }
+
+        form{
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        input{
+            width: 100%;
+            padding: 4px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        button{
+            width: 100%;
+            padding: 4px;
+            border-radius: 4px;
+            border: none;
+            margin-top: 16px;
+            background-color: var(--background-button);
+            color: var(--font-color-light);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #64DFA1;
+        }
+
+        span{
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.9rem;
+        }
+    }
+
+
+    .section__form_tablet-image{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: clamp(300px, 40vw, 500px);
+        }
+    }
+}
+
+.section__about-cauta-info{
+    padding: 5rem 3rem;
+    background-image: url(./assets/background2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media (max-width:430px) {
+        padding: 2rem 1rem;
+    }
+
+    div{
+        text-align: center;
+        color: var(--font-color-light);
+
+        p{
+            margin-top: 1rem;
+            text-align: center;
+
+            @media (max-width:430px) {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+.footer{
+    padding: 1rem;
+}
+
